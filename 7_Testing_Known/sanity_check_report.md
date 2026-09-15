@@ -39,5 +39,4 @@ Real Agent — sanity check sub-agent
 
 | Date | Report | Location | Status |
 |------|--------|----------|--------|
-| 2026-05-30 | Template fitness validation | `_obsolete/sanity_check_report_2026-05-30.md` | Archived (predates `index.html`; findings resolved) |
-| 2026-07-12 | Full project sanity check | `1_Real_Unknown/sanity_check_report.md` | ✅ Canonical |
+| 2026-09-15 | buffer project bootstrap | `1_Real_Unknown/sanity_check_report.md` | ✅ Canonical |

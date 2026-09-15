@@ -17,35 +17,35 @@
 ## 📥 Backlog
 *Tasks that are defined but not yet scheduled.*
 
-- [ ] **TSK-009: Production Environment Setup**
-  - **Assignee:** Human / DevOps
-  - **Details:** Setup production VMs/Containers on Fly.io and configure production TLS.
-  - **Stage Reference:** N/A
+- [ ] **TSK-002: Define YouTube Ingestion Approach**
+  - **Assignee:** Environment Agent
+  - **Details:** Decide how buffer pulls video metadata/transcripts from our YouTube channel.
+  - **Stage Reference:** [2_Environment](../2_Environment/)
 
-- [ ] **TSK-010: Advanced Multimodal Simulation Test**
-  - **Assignee:** Gemini
-  - **Details:** Validate UI layouts dynamically using Gemini multimodal vision checks.
-  - **Stage Reference:** [Simulation Stage](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/3_Simulation/)
+- [ ] **TSK-005: Per-Channel Post Templates**
+  - **Assignee:** Formula Agent
+  - **Details:** Define format rules for LinkedIn, X.com, Reddit, Skool, YouTube, Email posts.
+  - **Stage Reference:** [4_Formula](../4_Formula/)
+
+- [ ] **TSK-008: OAuth/API Credential Flow Per Channel**
+  - **Assignee:** Environment Agent
+  - **Details:** Design how buffer authenticates against each channel's API.
+  - **Stage Reference:** [2_Environment](../2_Environment/)
 
 ---
 
 ## 📋 Planned / To Do
 *Tasks scheduled for implementation.*
 
-- [ ] **TSK-005: Setup CI/CD Pipeline**
-  - **Assignee:** Copilot / DevOps
-  - **Details:** Set up GitHub Actions workflow to deploy static content to GitHub Pages.
-  - **Stage Reference:** [2_Environment/setup_ai.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/2_Environment/setup_ai.md)
+- [ ] **TSK-003: Pull Video Metadata + Transcript**
+  - **Assignee:** Symbols Agent
+  - **Details:** Implement ingestion for a single given video as the first working slice.
+  - **Stage Reference:** [5_Symbols](../5_Symbols/)
 
-- [ ] **TSK-006: Integrate Azure Key Vault**
-  - **Assignee:** Claude / Security
-  - **Details:** Connect runtime environments to Azure Key Vault for secure secrets storage.
-  - **Stage Reference:** [2_Environment/setup_azure.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/2_Environment/setup_azure.md)
-
-- [ ] **TSK-007: Implement Active Reflection Routine**
-  - **Assignee:** All Agents
-  - **Details:** Establish `6_Semblance/lessons_learned.md` for post-milestone retrospectives.
-  - **Stage Reference:** [6_Semblance Stage](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/6_Semblance/)
+- [ ] **TSK-006: Content-to-Post Generation Pipeline**
+  - **Assignee:** Symbols Agent
+  - **Details:** Implement the source video → per-channel draft transformation.
+  - **Stage Reference:** [5_Symbols](../5_Symbols/)
 
 ---
 
@@ -59,40 +59,17 @@
 ## 👀 In Review
 *Tasks completed and awaiting validation/review.*
 
-- [ ] **TSK-008: Basic Stage Folders Structure Validation**
-  - **Assignee:** Claude / Gemini
-  - **Details:** Ensure folder mapping (1-7) exists and is populated with correct template files.
-  - **Stage Reference:** [7_Testing_Known/README.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/7_Testing_Known/README.md)
+*No tasks in review.*
 
 ---
 
 ## ✅ Done
 *Verified and completed tasks.*
 
-- [x] **TSK-001: Git Repository Initialization**
-  - **Assignee:** Human
-  - **Details:** Initialized repository and basic project structure.
-  - **Stage Reference:** [README.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/README.md)
-
-- [x] **TSK-002: Project Home Page Layout**
-  - **Assignee:** Gemini
-  - **Details:** Created `index.html` and `navigation_config.json` for site entry point.
-  - **Stage Reference:** [index.html](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/index.html)
-
-- [x] **TSK-003: Define Kanban Template**
-  - **Assignee:** Gemini
-  - **Details:** Created `1_Real_Unknown/kanban.md` and define the initial setup tasks.
-  - **Stage Reference:** [1_Real_Unknown/kanban.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/1_Real_Unknown/kanban.md)
-
-- [x] **TSK-004: Configure Navigation & Menus**
-  - **Assignee:** Gemini / Claude
-  - **Details:** Add dynamic JSON configuration loading for navigation menus and ensure persistency via cookies.
-  - **Stage Reference:** [2_Environment/navigation.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/2_Environment/navigation.md)
-
-- [x] **TSK-011: Supabase Database Integration & Setup**
-  - **Assignee:** Gemini
-  - **Details:** Initialize local Supabase CLI config, document database integration, and Azure Key Vault secret mappings.
-  - **Stage Reference:** [4_Formula/database.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/4_Formula/database.md)
+- [x] **TSK-001: Bootstrap buffer from delivery-pilot-template**
+  - **Assignee:** Claude
+  - **Details:** Replaced template placeholders, reset stage content for buffer's actual purpose, synced navigation, ran smoke tests.
+  - **Stage Reference:** [README.md](../README.md)
 
 ---
 
@@ -102,8 +79,7 @@
 - [ ] Update the environment folder > 1_Real_Unknown
 - [ ] Update the environment folder > 2_Environment
 - [ ] Add new features incoming as visuals folder > 3_Simulation
-- [ ] Add new ways of doing the implementation  to formula folder > 4_Formula
+- [ ] Add new ways of doing the implementation to formula folder > 4_Formula
 - [ ] Update the Symbols and pay technical debt > 5_Symbols
-- [ ] Add new errors in semblance  > 6_Semblance
+- [ ] Add new errors in semblance > 6_Semblance
 - [ ] Update the tests folder > 7_Testing_Known
-

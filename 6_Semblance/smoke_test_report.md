@@ -4,30 +4,30 @@
 > Latest run overwrites this file; one report per test run.
 
 ## Run Info
-- **Date:** 2026-09-10 06:12
-- **Trigger:** RULE-005 root layout + nav backfill
+- **Date:** Pending first run
+- **Trigger:** buffer project bootstrap
 - **Mode:** Local filesystem
 - **Tester:** smoke_test.py (automated)
-- **Verdict:** ✅ ALL PASS
+- **Verdict:** ⏳ Pending — run `python3 5_Symbols/toolbox/smoke_test.py` to generate this report.
 
 ## Results Summary
 | Test | Result | Detail |
 |------|--------|--------|
-| Navigation Config | ✅ Pass | — |
-| Page Load (root files) | ✅ Pass | — |
-| Menu Links Resolve | ✅ Pass | — |
-| Project Menu | ✅ Pass | — |
-| Debug Menu | ✅ Pass | — |
-| Nav 3-Way Sync | ✅ Pass | — |
-| Stage Docs In Menu | ✅ Pass | — |
-| Social Links | ✅ Pass | — |
-| README Pages URL | ✅ Pass | — |
-| Secrets Scan | ✅ Pass | — |
-| Root Layout (RULE-005) | ✅ Pass | — |
+| Navigation Config | — | — |
+| Page Load (root files) | — | — |
+| Menu Links Resolve | — | — |
+| Project Menu | — | — |
+| Debug Menu | — | — |
+| Nav 3-Way Sync | — | — |
+| Stage Docs In Menu | — | — |
+| Social Links | — | — |
+| README Pages URL | — | — |
+| Secrets Scan | — | — |
+| Root Layout (RULE-005) | — | — |
 
 ## Failures
 
-None — all smoke tests passed. ✨
+Pending first run.
 
 ## Rules Applied
 - Every failure gets a GitHub Issue (`[SMOKE-FAIL] <test> — <description>`)

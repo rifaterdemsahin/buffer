@@ -175,6 +175,19 @@
 - **Related Files:** `5_Symbols/rules/agent_operating_rules.md`, `5_Symbols/rules/file_organization.md`, `agents.md`, `5_Symbols/toolbox/smoke_test.py`, `README.md`
 - **Last Updated:** 2026-09-10
 
+### SPEC-014: buffer Project Initialized From delivery-pilot-template
+- **Status:** Active
+- **Description:** `buffer` — a marketing application for outreach — was bootstrapped from `delivery-pilot-template` per SPEC-010's consumer bootstrap procedure. This spec records the project's objective and what was delivered by the bootstrap.
+- **Key Behaviors:**
+  - **Objective:** Create a marketing application like Buffer (the social media scheduling tool) that repurposes content from our YouTube channel into posts for other outreach channels.
+  - **Key Result:** Create posts for social media channels.
+  - **Target channels:** LinkedIn, X.com, Reddit, Skool, YouTube, Email.
+  - **Content source:** Our YouTube channel — content is sourced/derived from existing published videos and repurposed per channel.
+  - Bootstrap delivered: placeholders replaced (`README.md`, `index.html`, `sitemap.xml`, `robots.txt`, `2_Environment/supabase/config.toml`); `1_Real_Unknown/` stage docs rewritten for this project's actual problem/OKRs/hypotheses/questions/tasks/kanban/risks; `4_Formula`, `6_Semblance`, `7_Testing_Known` reset to fresh templates; navigation resynced; smoke tests passing.
+  - Framework specs (SPEC-001 through SPEC-013) are unchanged — they describe the delivery-pilot-template mechanism itself, which this project continues to use as-is.
+- **Related Files:** `1_Real_Unknown/problem_statement.md`, `1_Real_Unknown/okrs.md`, `README.md`, `index.html`
+- **Last Updated:** 2026-09-15
+
 ---
 
 ## Spec Template

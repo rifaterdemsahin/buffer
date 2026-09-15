@@ -16,14 +16,14 @@
 - **Root Cause:** *Why did this happen? (e.g., mismatch in python versions, missing dependencies, or incorrect API permissions).*
 - **Fix Applied:** *How was it resolved? (Link to code fix or terminal commands).*
 - **Workaround Active:** Yes / No *(If yes, link to `workarounds.md`)*
-- **Linked Resource:** [4_Formula/relevant_guide.md](file:///Users/rifaterdemsahin/projects/delivery-pilot-template/4_Formula/)
+- **Linked Resource:** [4_Formula/relevant_guide.md](../4_Formula/)
 
 ---
 
 ### [YYYY-MM-DD] Second Error Title
 - **Symptom:**
   ```text
-  
+
   ```
 - **Root Cause:**
 - **Fix Applied:**

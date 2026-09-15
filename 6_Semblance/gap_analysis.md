@@ -8,8 +8,8 @@
 
 | Objective (From Stage 1) | Target Metric | Actual Outcome | Status | Notes / Gaps |
 | :--- | :--- | :--- | :--- | :--- |
-| **Obj 1:** [e.g., Set up local AI stack] | Ollama & Qdrant run in Docker | Ollama running locally, Qdrant running in Docker | ✅ Met | Setup completed successfully. |
-| **Obj 2:** [e.g., Deploy to Fly.io] | 100% successful build & host | Fly.io deployment blocked due to region availability | ⚠️ Partial | Deployed to backup region. |
+| **Obj 1:** Repurpose YouTube content into multi-channel outreach automatically | Draft post generated per channel from one source video | Not yet built | ⏳ Pending | Bootstrap stage only — implementation not started. |
+| **Obj 2:** Create posts for social media channels | At least one real draft post per channel type | Not yet built | ⏳ Pending | See `1_Real_Unknown/tasks.md` for the planned implementation phases. |
 | **Obj 3:** [Enter objective...] | | | | |
 
 ---
