@@ -188,6 +188,18 @@
 - **Related Files:** `1_Real_Unknown/problem_statement.md`, `1_Real_Unknown/okrs.md`, `README.md`, `index.html`
 - **Last Updated:** 2026-09-15
 
+### SPEC-015: LinkedIn Post Scheduler — Copy-to-Clipboard Page
+- **Status:** Active
+- **Description:** First real content pass on top of the SPEC-014 scaffold — turns 4 source videos from https://www.youtube.com/@RifatErdemSahin/videos into LinkedIn post copy paired with externally-generated thumbnail images, presented on a page the user can use to paste-and-schedule in LinkedIn's own composer.
+- **Key Behaviors:**
+  - **Source videos:** `3bwaZ-xUJcs`, `2EVPwgi8NZA`, `WK66w51UMrs`, `3VgRz5GeYDA` (4 videos from the channel).
+  - **Images:** 12 externally-generated thumbnails (3 tone variants per video — safe-evolution / curiosity-tension / bold-contrarian) stored at `3_Simulation/linkedin_campaign_2026-09-15/`, matched to their source video by the YouTube ID embedded in each filename.
+  - **Copy:** 3 LinkedIn post variants per video (12 total), each grounded in the on-thumbnail hook text and the actual video title, no fabricated stats.
+  - **Page:** `5_Symbols/linkedin_scheduler.html` — one section per video with thumbnail previews, video link, and a "Copy post" button per tone variant using `navigator.clipboard`.
+  - **Scope boundary:** this is manual copy-paste scheduling, not automated publishing — buffer has no LinkedIn API/OAuth integration yet. Real scheduling/publishing is a follow-up (tracked in `1_Real_Unknown/tasks.md`) that needs RULE-003 backend + Azure Key Vault-stored LinkedIn credentials.
+- **Related Files:** `5_Symbols/linkedin_scheduler.html`, `3_Simulation/linkedin_campaign_2026-09-15/`, `3_Simulation/image_prompts.md`, `3_Simulation/carousel_config.json`
+- **Last Updated:** 2026-09-15
+
 ---
 
 ## Spec Template
