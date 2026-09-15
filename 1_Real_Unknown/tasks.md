@@ -38,6 +38,7 @@
 |----|------|-------|------|
 | TSK-011 | Define scheduling mechanism (queue, cron, manual approve-and-send) | Formula Agent | [ ] |
 | TSK-012 | Implement scheduler and post-history tracking | Symbols Agent | [ ] |
+| TSK-012a | Real LinkedIn publishing: OAuth + API scheduling to replace the copy-paste flow in `5_Symbols/linkedin_scheduler.html` (SPEC-015) — needs a backend per RULE-003 and LinkedIn credentials in Azure Key Vault (`/vaults/dp-kv-deliverypilot/secrets`) | Formula + Symbols Agent | [ ] |
 
 ## Phase 5: Testing & Deployment (Planned)
 

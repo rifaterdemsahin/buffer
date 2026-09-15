@@ -32,6 +32,20 @@
 
 ---
 
+### 3. LinkedIn Campaign Thumbnails — 2026-09-15 batch
+- **Asset Names:** `3_Simulation/linkedin_campaign_2026-09-15/*.png` (12 files)
+- **Target Platform / Screen:** LinkedIn post image (16:9)
+- **Source:** Generated externally (outside this session) and supplied by the user from `~/Downloads`; not generated via an in-session prompt, so no prompt text to log — recorded here for asset traceability instead.
+- **Pairing:** Each filename embeds `_<source-video-id>` mapping it to the source YouTube video (see `4_Formula/specs.md` SPEC-015). 3 tone variants per video: `A-safe-evolution`, `B-curiosity-tension`, `C-bold-contrarian`.
+  - `3bwaZ-xUJcs` — "Master AI Before the Skills Gap Masters You"
+  - `2EVPwgi8NZA` — "10 AI Tips to Learn Faster and Execute Like a Pro"
+  - `WK66w51UMrs` — "Turn AI Into Your Personal Accountability Partner"
+  - `3VgRz5GeYDA` — "One AI Habit Broke My Groundhog Day Loop"
+- **Generated Date:** 2026-09-15
+- **Linked Page:** [linkedin_scheduler.html](../5_Symbols/linkedin_scheduler.html)
+
+---
+
 ## 📌 Guidelines for Image Generation
 1. **No Device Frames:** Always request mockups *without* laptop, phone, or tablet frames (unless explicitly required) so the raw UI can be rendered directly.
 2. **Aspect Ratios:** Match target displays:

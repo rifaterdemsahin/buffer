@@ -2,7 +2,8 @@
   "projectMenu": [
     {"label": "Home", "url": "index.html"},
     {"label": "Docs", "url": "5_Symbols/markdown_renderer.html?file=2_Environment/README.md"},
-    {"label": "API", "url": "5_Symbols/markdown_renderer.html?file=4_Formula/README.md"}
+    {"label": "API", "url": "5_Symbols/markdown_renderer.html?file=4_Formula/README.md"},
+    {"label": "LinkedIn", "url": "5_Symbols/linkedin_scheduler.html"}
   ],
   "debugMenu": [
     {"label": "1. Real Unknown", "url": "1_Real_Unknown/README.md"},
@@ -68,6 +69,7 @@
     {"label": "   ├─ Validation Report", "url": "7_Testing_Known/validation_report.md"},
     {"label": "   ├─ Sanity Data Source", "url": "7_Testing_Known/sanity_check_report.md"},
     {"label": "---", "url": "divider"},
+    {"label": "LinkedIn Scheduler", "url": "5_Symbols/linkedin_scheduler.html"},
     {"label": "Artifacts Carousel", "url": "5_Symbols/artifacts_carousel.html"},
     {"label": "agents.md", "url": "agents.md"},
     {"label": "claude.md", "url": "claude.md"},

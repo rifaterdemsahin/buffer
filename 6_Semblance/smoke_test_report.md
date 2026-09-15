@@ -4,7 +4,7 @@
 > Latest run overwrites this file; one report per test run.
 
 ## Run Info
-- **Date:** 2026-09-15 19:50
+- **Date:** 2026-09-15 20:05
 - **Trigger:** Manual run
 - **Mode:** Local filesystem
 - **Tester:** smoke_test.py (automated)

@@ -71,6 +71,7 @@ MENU = [
     ("   ├─ Validation Report", "7_Testing_Known/validation_report.md"),
     ("   ├─ Sanity Data Source", "7_Testing_Known/sanity_check_report.md"),
     ("---", "divider"),
+    ("LinkedIn Scheduler", "5_Symbols/linkedin_scheduler.html"),
     ("Artifacts Carousel", "5_Symbols/artifacts_carousel.html"),
     ("agents.md", "agents.md"),
     ("claude.md", "claude.md"),

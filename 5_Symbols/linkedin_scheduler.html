@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LinkedIn post copy + thumbnails for 4 source videos, ready to copy-paste into LinkedIn's scheduler.">
+  <title>📅 LinkedIn Scheduler — buffer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 28, 45, 0.7);
+      --bg-glass: rgba(15, 23, 42, 0.6);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --text-primary: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-violet: #8b5cf6;
+      --accent-cyan: #06b6d4;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.2s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image:
+        radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header.app-header {
+      backdrop-filter: blur(12px);
+      background-color: var(--bg-glass);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .back-btn:hover { color: var(--accent-cyan); }
+
+    .page-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .intro {
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+    }
+    .intro h1 {
+      font-family: var(--font-display);
+      color: var(--text-primary);
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .intro p { max-width: 68ch; }
+    .intro code {
+      background: rgba(255,255,255,0.06);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    .video-block {
+      margin-bottom: 3rem;
+    }
+
+    .video-block-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .video-block-head h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+    }
+
+    .video-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      font-weight: 500;
+    }
+    .video-link:hover { text-decoration: underline; }
+
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .variant-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .variant-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+
+    .variant-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.75rem;
+    }
+
+    .tone-badge {
+      align-self: flex-start;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+    }
+    .tone-A { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+    .tone-B { background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); }
+    .tone-C { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+
+    .post-text {
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      white-space: pre-wrap;
+      flex: 1;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.75rem;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .copy-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    .copy-btn.copied { background: var(--accent-green); }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="header-container">
+      <a href="../index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Home</span>
+      </a>
+      <span class="page-title">📅 LinkedIn Scheduler</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1>Copy, paste, schedule</h1>
+      <p>
+        Post copy for 4 videos from
+        <a href="https://www.youtube.com/@RifatErdemSahin/videos" target="_blank" style="color: var(--accent-cyan);">@RifatErdemSahin</a>,
+        each paired with its matching thumbnail and 3 tone variants
+        (<strong>A</strong> safe-evolution, <strong>B</strong> curiosity-tension, <strong>C</strong> bold-contrarian).
+        Click <strong>Copy post</strong>, right-click-save the image you want, then paste both into
+        LinkedIn's own post composer / scheduler. See <code>4_Formula/specs.md</code> SPEC-015 —
+        this app doesn't publish to LinkedIn directly yet.
+      </p>
+    </div>
+
+    <div id="videoBlocks"></div>
+  </main>
+
+  <footer>
+    Images: <code>3_Simulation/linkedin_campaign_2026-09-15/</code> · Spec: <code>4_Formula/specs.md</code> SPEC-015
+  </footer>
+
+  <script>
+    const IMG_DIR = "../3_Simulation/linkedin_campaign_2026-09-15/";
+
+    const videos = [
+      {
+        title: "Master AI Before the Skills Gap Masters You",
+        url: "https://www.youtube.com/watch?v=3bwaZ-xUJcs",
+        slug: "01-master-ai-skills-gap",
+        id: "3bwaZ-xUJcs",
+        variants: {
+          A: `The AI skills gap isn't a wall — it's a bridge you're already standing on.
+
+Every week you wait to build a real, working habit with AI is a week the gap gets wider — not because AI is moving fast, but because the people around you are starting to move with it.
+
+You don't need to overhaul how you work. You need one deliberate hour this week to actually use AI on a real task, not a demo.
+
+I walk through exactly how to start in this video 👇
+
+🎥 https://www.youtube.com/watch?v=3bwaZ-xUJcs
+
+#AI #CareerGrowth #FutureOfWork #Upskilling #Leadership`,
+          B: `There's a version of you, 12 months from now, who either closed the AI skills gap — or got quietly left on the other side of it.
+
+Which one depends less on talent and more on one decision you make this week.
+
+I broke down exactly what separates the two in this video.
+
+🎥 https://www.youtube.com/watch?v=3bwaZ-xUJcs
+
+#AI #SkillsGap #CareerGrowth #Productivity #LearnAI`,
+          C: `Unpopular opinion: "I'll learn AI when I have more time" is the reason you'll never learn AI.
+
+There is no more time coming. The gap isn't closing — it's compounding, and waiting for the "right moment" is how skilled people become replaceable.
+
+I made this video for the version of you that's tired of waiting.
+
+🎥 https://www.youtube.com/watch?v=3bwaZ-xUJcs
+
+#AI #Contrarian #CareerAdvice #FutureOfWork #Skills`
+        }
+      },
+      {
+        title: "10 AI Tips to Learn Faster and Execute Like a Pro",
+        url: "https://www.youtube.com/watch?v=2EVPwgi8NZA",
+        slug: "02-10-ai-tips-learn-faster",
+        id: "2EVPwgi8NZA",
+        variants: {
+          A: `Most people aren't bad at learning AI — they're learning it the wrong way.
+
+Tutorial-hopping and bookmark-hoarding feel like progress, but they rarely translate into execution.
+
+I put together 10 tips that focus on the part that actually matters: using AI on real work, faster, with less second-guessing.
+
+🎥 https://www.youtube.com/watch?v=2EVPwgi8NZA
+
+#AI #ProductivityTips #LearnFaster #Execution #AITips`,
+          B: `If you've watched a dozen "AI tutorials" and still freeze when you open the tool for a real task — this one's for you.
+
+The tips that get you "informed" about AI and the tips that get you fast with AI are almost never the same tips.
+
+Here are 10 that are actually about the second kind.
+
+🎥 https://www.youtube.com/watch?v=2EVPwgi8NZA
+
+#AI #Learning #Execution #ProductivityHacks #AITips`,
+          C: `Hot take: bookmarking another "top AI tools" list is not a learning strategy. It's procrastination with extra steps.
+
+The people executing fastest with AI right now aren't the ones who know the most tools — they're the ones who practiced the fewest tools, deeply.
+
+Here are the 10 things I'd actually tell you to do instead.
+
+🎥 https://www.youtube.com/watch?v=2EVPwgi8NZA
+
+#AI #Productivity #UnpopularOpinion #LearnAI #Execution`
+        }
+      },
+      {
+        title: "Turn AI Into Your Personal Accountability Partner",
+        url: "https://www.youtube.com/watch?v=WK66w51UMrs",
+        slug: "03-groundhog-day-accountability",
+        id: "WK66w51UMrs",
+        variants: {
+          A: `Most days feel a little like Groundhog Day — same to-do list, same good intentions, same quiet slide by 6pm.
+
+An accountability partner fixes that, but not everyone has one on call at 7am and 9pm every day. AI can.
+
+Here's how I set mine up as a personal accountability partner — and what actually changed.
+
+🎥 https://www.youtube.com/watch?v=WK66w51UMrs
+
+#AI #Accountability #Productivity #Habits #PersonalDevelopment`,
+          B: `What if the reason your habits keep resetting isn't willpower — it's that nobody's actually checking in on you, every single day, at the exact moment you're about to skip it?
+
+I tested whether AI could fill that gap. The loop broke faster than I expected.
+
+🎥 https://www.youtube.com/watch?v=WK66w51UMrs
+
+#AI #Habits #Accountability #Productivity #SelfImprovement`,
+          C: `Accountability apps and habit trackers don't work. They log what you already failed to do — they don't stop you from failing.
+
+An AI that actually talks back, at the right moment, does something trackers never could.
+
+Here's what happened when I made the switch.
+
+🎥 https://www.youtube.com/watch?v=WK66w51UMrs
+
+#AI #Habits #Contrarian #Productivity #Accountability`
+        }
+      },
+      {
+        title: "One AI Habit Broke My Groundhog Day Loop",
+        url: "https://www.youtube.com/watch?v=3VgRz5GeYDA",
+        slug: "04-being-broken-secret-weapon",
+        id: "3VgRz5GeYDA",
+        variants: {
+          A: `Kintsugi is the art of repairing broken pottery with gold — the break becomes the most valuable part of the piece.
+
+One small, unglamorous AI habit did something similar to a loop I'd been stuck in for months. It didn't erase the rough patch — it turned it into the thing that moved me forward.
+
+Here's the habit.
+
+🎥 https://www.youtube.com/watch?v=3VgRz5GeYDA
+
+#AI #Habits #Growth #Mindset #PersonalDevelopment`,
+          B: `I didn't fix my Groundhog Day loop with a new app, a new routine, or more discipline.
+
+One small AI habit did it — and it's not the one you'd guess.
+
+🎥 https://www.youtube.com/watch?v=3VgRz5GeYDA
+
+#AI #Habits #Productivity #Mindset #Growth`,
+          C: `"Just build better habits" is advice that's failed most people at least once. It failed me for months.
+
+What actually broke the loop wasn't more discipline — it was outsourcing the one part of the habit that discipline can't fix.
+
+This video is that one habit.
+
+🎥 https://www.youtube.com/watch?v=3VgRz5GeYDA
+
+#AI #Habits #Contrarian #Productivity #Mindset`
+        }
+      }
+    ];
+
+    const TONE_LABEL = { A: "A · Safe Evolution", B: "B · Curiosity Tension", C: "C · Bold Contrarian" };
+    const TONE_SLUG = { A: "A-safe-evolution", B: "B-curiosity-tension", C: "C-bold-contrarian" };
+
+    const container = document.getElementById("videoBlocks");
+
+    videos.forEach(video => {
+      const block = document.createElement("section");
+      block.className = "video-block";
+
+      const head = document.createElement("div");
+      head.className = "video-block-head";
+      head.innerHTML = `
+        <h2>${video.title}</h2>
+        <a class="video-link" href="${video.url}" target="_blank">
+          <i class="fa-brands fa-youtube"></i> Watch source video
+        </a>
+      `;
+      block.appendChild(head);
+
+      const grid = document.createElement("div");
+      grid.className = "variant-grid";
+
+      ["A", "B", "C"].forEach(tone => {
+        const imgFile = `${video.slug}_${TONE_SLUG[tone]}_${video.id}.png`;
+        const card = document.createElement("div");
+        card.className = "variant-card";
+        card.innerHTML = `
+          <img src="${IMG_DIR}${imgFile}" alt="${video.title} — ${TONE_LABEL[tone]} thumbnail" loading="lazy">
+          <div class="variant-body">
+            <span class="tone-badge tone-${tone}">${TONE_LABEL[tone]}</span>
+            <div class="post-text">${video.variants[tone]}</div>
+            <button class="copy-btn" type="button">
+              <i class="fa-regular fa-copy"></i> Copy post
+            </button>
+          </div>
+        `;
+        const btn = card.querySelector(".copy-btn");
+        btn.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(video.variants[tone]);
+            btn.classList.add("copied");
+            btn.innerHTML = `<i class="fa-solid fa-check"></i> Copied`;
+            setTimeout(() => {
+              btn.classList.remove("copied");
+              btn.innerHTML = `<i class="fa-regular fa-copy"></i> Copy post`;
+            }, 1800);
+          } catch (err) {
+            console.warn("Clipboard write failed", err);
+            btn.innerHTML = `<i class="fa-solid fa-xmark"></i> Copy failed — select text manually`;
+          }
+        });
+        grid.appendChild(card);
+      });
+
+      block.appendChild(grid);
+      container.appendChild(block);
+    });
+  </script>
+</body>
+</html>
